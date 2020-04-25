@@ -48,3 +48,11 @@ from within the VM as well:
 ```
 $ vagrant ssh -- -R8443:localhost:8443
 ```
+
+## Windows Updates
+
+During provisioning, the automatic updates via Windows Update is disabled. This is, because I noticed
+the VM is unusable for a significant amount of time due to the updates.
+
+Therefore I strongly recommend to manually initiate the installation of the updates when you do not
+need the VM but as soon as possible.
