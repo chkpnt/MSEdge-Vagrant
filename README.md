@@ -18,8 +18,8 @@ $ brew cask install vagrant-manager
 
 # Usage
 The Vagrant Box from [Microsoft](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/),
-which provide *"Windows 10 with Legacy Microsoft Edge and Internet Explorer 11"*, has to be downloaded
-and added into your local Vagrant installation under the name *MSEdge*. This process is automated with
+which provides *"Windows 10 with Legacy Microsoft Edge and Internet Explorer 11"*, has to be downloaded
+and added into your local Vagrant installation under the name *MSEdge*. This process can be automated with
 the script `prepare.sh`.
 
 Some parts of the provisioning process can be configured. To make this possible a file `config.ps1` is expected.
@@ -59,9 +59,10 @@ accordingly.
 ## Windows Updates
 
 The VM can be unusable for a significant amount of time due to the search and installation for
-updates. Therefore, the automatic update feature of Windows Update can be disabled during provisioning.
+updates. Therefore, the automatic update feature of Windows Update can be disabled in the configuration
+of the provisioning.
 
-If you do so, strongly recommend to manually initiate the installation of the updates when you do not
+If you do so, I strongly recommend to manually initiate the installation of the updates when you do not
 need the VM but as soon as possible.
 
 ## System UI Language
