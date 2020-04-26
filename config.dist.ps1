@@ -1,5 +1,3 @@
-
-
 # Should the automatic search and installation of updates be disabled?
 $disableWindowsAutoUpdate = $true
 
