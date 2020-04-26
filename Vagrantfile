@@ -3,8 +3,6 @@
 
 Vagrant.configure("2") do |config|
 
-    config.vagrant.plugins = ["vagrant-vbguest"]
-
     config.vm.box = "MSEdge"
     config.vm.communicator = "winrm"
     config.vm.guest = :windows
@@ -18,6 +16,9 @@ Vagrant.configure("2") do |config|
     # For RDP:
     config.vm.network "forwarded_port", guest: 3389, host: 3389
 
+    config.vagrant.plugins = ["vagrant-vbguest"]
+    config.vbguest.auto_update = true
+    
     config.vm.provider 'virtualbox' do |vbox|
         vbox.linked_clone = true
         vbox.gui = true
