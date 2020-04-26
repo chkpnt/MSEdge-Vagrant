@@ -8,9 +8,6 @@ $dpiScaling = 4
 # Should the Dark Mode be activated?
 $darkMode = $true
 
-# To get the list of time zones: Get-TimeZone -ListAvailable
-$timeZone = "W. Europe Standard Time"
-
 # hosts:
 $hostsFile = @"
 10.0.2.2 vagrant-host
