@@ -32,7 +32,8 @@ $ vagrant up
 ```
 
 This will create the virtual machine, updates the VirtualBox guest tools and applies the provisioning.
-This can take some time, please wait until the command terminated before using the VM. Before the VM is ready, it will be rebooted and automatically logged on.
+**This can take some time, please wait until the command is finished before using the VM.**
+Before the VM is ready, it will be rebooted and the user `IEUser` will be automatically logged on.
 
 The VM uses an account with username `IEUser` and password `Passw0rd!`. To access the VM, a remote desktop connection can be used as well:
 
