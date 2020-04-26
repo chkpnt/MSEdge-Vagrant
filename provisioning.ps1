@@ -98,3 +98,6 @@ foreach ($language in $languageList) {
 }
 
 Set-WinUserLanguageList $languageList -Force
+
+$firstInputMethod =  $languageList | Select -Index 0 | Select -ExpandProperty InputMethodTips | Select -Index 0
+Set-WinDefaultInputMethodOverride -InputTip $firstInputMethod
