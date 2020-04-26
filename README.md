@@ -62,3 +62,8 @@ updates. Therefore, the automatic update feature of Windows Update can be disabl
 
 If you do so, strongly recommend to manually initiate the installation of the updates when you do not
 need the VM but as soon as possible.
+
+## System UI Language
+
+If you need another Windows display language than the preinstalled "English (United States)",
+you have to install the corresponding language pack by your own via the Settings app.
