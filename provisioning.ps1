@@ -9,20 +9,20 @@ Start-Service -Name sshd
 
 # Remote Desktop (RDP)
 Write-Host "- Enable and start Remote Desktop"
-Set-ItemProperty -Path "HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server" -name fDenyTSConnections -Value 0
+Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -name fDenyTSConnections -Value 0
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
 # Auto-Logon
 Write-Host "- Enable automatic logon for account IEUser"
-Set-ItemProperty -Path "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon" -Name AutoAdminLogon -Value 1
-Set-ItemProperty -Path "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon" -Name DefaultUserName -Value "IEUser"
-Set-ItemProperty -Path "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon" -Name DefaultPassword -Value "Passw0rd!"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name AutoAdminLogon -Value 1
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name DefaultUserName -Value "IEUser"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name DefaultPassword -Value "Passw0rd!"
 
 # Windows-Update
 # https://docs.microsoft.com/security-updates/windowsupdateservices/18127499
 Write-Host "- Disable automatic search and installation of Windows Updates: $disableWindowsAutoUpdate"
 if ($disableWindowsAutoUpdate) {
-    $windowsUpdatePath = "HKLM:\\Software\\Policies\\Microsoft\\Windows\\WindowsUpdate"
+    $windowsUpdatePath = "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate"
     if (!(Test-Path $windowsUpdatePath)) {
         New-Item -Path $windowsUpdatePath -Force | Out-Null
     }
@@ -33,8 +33,8 @@ if ($disableWindowsAutoUpdate) {
 # DPI-Scaling:
 # 0 (100%, 96dpi); 1 (125%, 120dpi); 2 (150%, 144dpi); 3 (175%, 168dpi); 4 (200%, 192dpi)
 Write-Host "- Set scaling to: $dpiScaling"
-$perMonitorSettings = "HKCU:\\Control Panel\\Desktop\\PerMonitorSettings"
-$monitorPath = "$perMonitorSettings\\NOEDID_80EE_BEEF_00000000_00020000_0^8EBF71A8F8FA6B5415313805363EA384"
+$perMonitorSettings = "HKCU:\Control Panel\Desktop\PerMonitorSettings"
+$monitorPath = "$perMonitorSettings\NOEDID_80EE_BEEF_00000000_00020000_0^8EBF71A8F8FA6B5415313805363EA384"
 if (!(Test-Path $monitorPath)) {
     New-Item -Path $monitorPath -Force | Out-Null
 }
@@ -44,7 +44,7 @@ Set-ItemProperty -Path $monitorPath -Name "DpiValue" -Type DWord -Value $dpiScal
 # Unfortunately, I don't know yet how to activate the dark mode of Edge
 Write-Host "- Enable Dark Mode: $darkMode"
 $useLightTheme = If ($darkMode) { 0 } Else { 1 }
-Set-ItemProperty -Path "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize" -Name AppsUseLightTheme -Value $useLightTheme
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name AppsUseLightTheme -Value $useLightTheme
 
 # hosts:
 Write-Host "- Set content of $env:windir\System32\drivers\etc\hosts to:"
