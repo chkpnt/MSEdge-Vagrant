@@ -99,5 +99,9 @@ foreach ($language in $languageList) {
 
 Set-WinUserLanguageList $languageList -Force
 
-$firstInputMethod =  $languageList | Select -Index 0 | Select -ExpandProperty InputMethodTips | Select -Index 0
-Set-WinDefaultInputMethodOverride -InputTip $firstInputMethod
+# Normally, the first language and input method is the default. But sometimes it doesn't seem to work.
+# Haven't figured out why. Unfortunately, using Set-WinDefaultInputMethodOverride
+# doesn't help either.
+# But I don't care further, as it's just a click in the language / keyboard selector in the taskbar.
+#$firstInputMethod =  $languageList | Select -Index 0 | Select -ExpandProperty InputMethodTips | Select -Index 0
+#Set-WinDefaultInputMethodOverride -InputTip $firstInputMethod
