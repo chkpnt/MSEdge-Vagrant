@@ -1,0 +1,3 @@
+# Credits
+- [@StefanScherer](https://github.com/StefanScherer), for his [gist](https://gist.github.com/StefanScherer/adbb421dc0adca75b49e0031a99595a5) about how to activate auto logon.
+- [@zmwangx](https://github.com/zmwangx), for his [gist](https://gist.github.com/zmwangx/e728c56f428bc703c6f6) where he archives the download urls. Without this, I wouldn't know that Microsoft is providing a JSON endpoint.
