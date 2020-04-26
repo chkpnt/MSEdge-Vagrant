@@ -27,3 +27,8 @@ if [ ! -f "${boxfiles[0]}" ]; then
     exit 2
 fi
 vagrant box add --name MSEdge --force "${boxfiles[0]}"
+
+if [ ! -f "config.ps1" ]; then
+    echo "Preparing config.ps1, as it did not exist yet."
+    cp "config.dist.ps1" "config.ps1"
+fi

@@ -34,5 +34,6 @@ Vagrant.configure("2") do |config|
         vbox.customize ['modifyvm', :id, '--draganddrop', 'bidirectional']
     end
 
+    config.vm.provision "file", source: "config.ps1", destination: "c:\\tmp\\config.ps1"
     config.vm.provision "shell", privileged: false, path: "provisioning.ps1", reboot: true
 end
