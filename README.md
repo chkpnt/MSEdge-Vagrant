@@ -3,7 +3,7 @@ Legacy Microsoft Edge and Internet Explorer 11"* provided
 [by Microsoft](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) for usage with Vagrant.
 
 # Prerequisites
-Only VirtualBox, Vagrant and Ansible are required. On macOS, these dependencies can be installed using Homebrew:
+Only VirtualBox and Vagrant are required. On macOS, these dependencies can be installed using Homebrew:
 
 ```
 $ brew cask install virtualbox
