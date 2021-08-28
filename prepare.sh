@@ -3,7 +3,7 @@
 echo 'Trying to get the download-url for the Vagrant box of "Windows 10 with Legacy Microsoft Edge and Internet Explorer 11"'
 
 apiEndpoint="https://developer.microsoft.com/en-us/microsoft-edge/api/tools/vms/"
-url=$(curl -fsSL $apiEndpoint | jq -r '.[].software[] | select(.name == "Vagrant") | .files[].url')
+url=$(curl -fsSL $apiEndpoint | jq -r '.[].software[] | select(.name == "Vagrant") | .files[] | select(.name | contains("MSEdge.Win10")) | .url')
 
 if [ -z $url ]; then
     echo "... failed"
